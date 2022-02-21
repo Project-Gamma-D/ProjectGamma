@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.projectgamma'
+version '1.0-dev'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.dv8tion:JDA:5.0.0-alpha.6'
+    implementation 'org.slf4j:slf4j-simple:1.7.36'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+application {
+    mainClass = 'com.projectgamma.ProjectGamma.Main'
+}
+
+run {
+    File file = new File(".token")
+    Scanner reader = new Scanner(file)
+    args reader.nextLine()
+}
+
+test {
+    useJUnitPlatform()
+}
