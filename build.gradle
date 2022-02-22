@@ -8,11 +8,15 @@ version '1.0-dev'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://libraries.minecraft.net'
+    }
 }
 
 dependencies {
     implementation 'net.dv8tion:JDA:5.0.0-alpha.6'
     implementation 'org.slf4j:slf4j-simple:1.7.36'
+    implementation 'com.mojang:brigadier:1.0.18'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
