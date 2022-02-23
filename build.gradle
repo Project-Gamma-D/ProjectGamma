@@ -27,9 +27,12 @@ application {
 }
 
 run {
-    File file = new File(".token")
-    Scanner reader = new Scanner(file)
-    args reader.nextLine()
+    try {
+        Scanner scanner = new Scanner(layout.projectDirectory.file(".token").getAsFile())
+        args scanner.nextLine()
+    } catch (Exception ignored) {
+        logger.warn('The file .token is missing. This file is needed to authenticate with the Discord API when testing with gradle :run')
+    }
 }
 
 test {
