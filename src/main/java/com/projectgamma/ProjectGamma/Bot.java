@@ -1,10 +1,10 @@
-package com.projectgamma.ProjectGamma.impl;
+package com.projectgamma.ProjectGamma;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.projectgamma.ProjectGamma.api.CommandProvider;
 import com.projectgamma.ProjectGamma.api.DiscordCommandSource;
-import com.projectgamma.ProjectGamma.impl.commands.CoreCommands;
+import com.projectgamma.ProjectGamma.commands.CoreCommands;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;

@@ -4,7 +4,15 @@ plugins {
 }
 
 group 'com.projectgamma'
-version '1.0-dev'
+version project.app_version
+
+sourceSets {
+    api {
+        java {
+            srcDirs('src/api')
+        }
+    }
+}
 
 repositories {
     mavenCentral()
@@ -14,12 +22,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'net.dv8tion:JDA:5.0.0-alpha.6'
-    implementation 'org.slf4j:slf4j-simple:1.7.36'
-    implementation 'com.mojang:brigadier:1.0.18'
+    implementation(sourceSets.api.runtimeClasspath)
+    implementation "net.dv8tion:JDA:${project.jda_version}"
+    implementation "org.slf4j:slf4j-simple:${project.slf4j_simple_version}"
+    implementation "com.mojang:brigadier:${project.brigadier_version}"
 
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    apiImplementation "net.dv8tion:JDA:${project.jda_version}"
+    apiImplementation "com.mojang:brigadier:${project.brigadier_version}"
 }
 
 application {
@@ -29,13 +38,9 @@ application {
 // This will optionally load the bot token from a .token file in the project root and use it to run the program
 run {
     try {
-        Scanner scanner = new Scanner(layout.projectDirectory.file(".token").getAsFile())
+        Scanner scanner = new Scanner(layout.projectDirectory.file('.token').getAsFile())
         args scanner.nextLine()
     } catch (Exception ignored) {
         logger.warn('The file .token is missing. This file is needed to authenticate with the Discord API when testing with gradle :run')
     }
-}
-
-test {
-    useJUnitPlatform()
 }

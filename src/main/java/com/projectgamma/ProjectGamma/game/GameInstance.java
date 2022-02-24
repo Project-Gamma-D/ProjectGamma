@@ -1,4 +1,4 @@
-package com.projectgamma.ProjectGamma.impl.game;
+package com.projectgamma.ProjectGamma.game;
 
 import com.projectgamma.ProjectGamma.api.game.Game;
 import com.projectgamma.ProjectGamma.api.game.GameChannel;

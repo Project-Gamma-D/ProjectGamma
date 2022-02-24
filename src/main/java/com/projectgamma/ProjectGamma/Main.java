@@ -1,6 +1,5 @@
 package com.projectgamma.ProjectGamma;
 
-import com.projectgamma.ProjectGamma.impl.Bot;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;

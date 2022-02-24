@@ -1,4 +1,4 @@
-package com.projectgamma.ProjectGamma.impl;
+package com.projectgamma.ProjectGamma;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.tree.CommandNode;

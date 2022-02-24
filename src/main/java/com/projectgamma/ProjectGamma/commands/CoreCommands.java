@@ -1,4 +1,4 @@
-package com.projectgamma.ProjectGamma.impl.commands;
+package com.projectgamma.ProjectGamma.commands;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
