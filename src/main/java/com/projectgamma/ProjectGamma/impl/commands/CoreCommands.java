@@ -10,6 +10,9 @@ import net.dv8tion.jda.api.entities.User;
 
 import java.util.function.Consumer;
 
+/**
+ * The basic commands provided by the bot
+ */
 public class CoreCommands implements CommandProvider {
 
     public static CommandProvider INSTANCE = new CoreCommands();
@@ -22,6 +25,9 @@ public class CoreCommands implements CommandProvider {
         commandRegisterer.accept(CommandProvider.literal("commands").executes(CoreCommands::commands));
     }
 
+    /**
+     * This command greets the user that sends it.
+     */
     static int hello(CommandContext<DiscordCommandSource> context) {
         User user = context.getSource().getAuthor();
         context.getSource().sendMessage("Hello, %s!", user.getAsMention());
@@ -29,6 +35,9 @@ public class CoreCommands implements CommandProvider {
         return 0;
     }
 
+    /**
+     * This command shows a list of registered commands.
+     */
     static int commands(CommandContext<DiscordCommandSource> context) {
         StringBuilder usage = new StringBuilder();
         for (String s : context.getSource().getSmartUsage().values()) {

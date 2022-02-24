@@ -12,6 +12,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
+/**
+ * The implementation of {@link DiscordCommandSource}. Mostly boilerplate code.
+ */
 public class DiscordCommandSourceImpl implements DiscordCommandSource {
 
     private final @NotNull Message message;

@@ -26,6 +26,7 @@ application {
     mainClass = 'com.projectgamma.ProjectGamma.Main'
 }
 
+// This will optionally load the bot token from a .token file in the project root and use it to run the program
 run {
     try {
         Scanner scanner = new Scanner(layout.projectDirectory.file(".token").getAsFile())
