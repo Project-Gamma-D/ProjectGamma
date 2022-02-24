@@ -9,7 +9,7 @@ public interface Player extends Formattable {
 
     /**
      * Returns a mention to the player, mostly useful when used in conjunction with
-     * {@link GameChannel#sendMessage(String, Object...)}. This is also the return value of {@link Player#toString()}
+     * {@link GameChannel#sendMessage(String, Object...)}. This is also the return value of {@code Player#toString()}
      *
      * @return A mention to the player in the format required by the Discord API
      */

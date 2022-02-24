@@ -22,10 +22,11 @@ public interface Game<S> {
     Optional<S> onGameStart(List<Player> players, GameChannel channel);
 
     /**
-     * This method will be called every time a player of the game sends a message in the game's channel.
+     * This method will be called every time a player of the game sends a message in the game's channel.<br/><br/>
      *
-     * @implNote This method only filters messages by sender, not by content. Be aware that you are likely to receive
+     * Note: This method only filters messages by sender, not by content. Be aware that you are likely to receive
      * tons of messages irrelevant to your game.
+     *
      * @param player The player who sent the message
      * @param message The message sent by the player
      * @param state The current game state
@@ -42,9 +43,10 @@ public interface Game<S> {
     boolean onPlayerJoin(Player player, State<S> state);
 
     /**
-     * This method will be called whenever a player decides to leave a not yet finished game.
+     * This method will be called whenever a player decides to leave a not yet finished game.<br/><br/>
      *
-     * @implSpec You cannot decide if the player stays in the game or not
+     * Note: You cannot decide if the player stays in the game or not
+     *
      * @param player The leaving player
      * @param state The current game state
      */
@@ -68,9 +70,9 @@ public interface Game<S> {
     interface State<S> {
 
         /**
-         * Returns the channel where the game is currently running.
+         * Returns the channel where the game is currently running.<br/><br/>
          *
-         * @implSpec The return value of this method could change across events, due to a game being moved to another
+         * Note: The return value of this method could change across events, due to a game being moved to another
          * channel
          * @return The channel that is currently associated to the running game
          */
