@@ -52,8 +52,8 @@ public class DiscordCommandSourceImpl implements DiscordCommandSource {
     }
 
     @Override
-    public void sendMessage(String text, Object... args) {
-        this.messageChannel.sendMessage(String.format(text, args)).queue();
+    public void sendMessage(String format, Object... args) {
+        this.messageChannel.sendMessage(String.format(format, args)).queue();
     }
 
     @Override
@@ -62,8 +62,8 @@ public class DiscordCommandSourceImpl implements DiscordCommandSource {
     }
 
     @Override
-    public void replyMessage(String text, Object... args) {
-        this.message.replyFormat(text, args).queue();
+    public void replyMessage(String format, Object... args) {
+        this.message.replyFormat(format, args).queue();
     }
 
     @Override
